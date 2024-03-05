@@ -119,7 +119,7 @@ col1, col2 = st.columns(2)
 with col1:
   daily_season_df = create_byseason_df(main_df)
   # Konfigurasi plot
-  fig, ax = plt.subplots()
+  fig, ax = plt.subplots(figsize=(7, 7))
   ax.pie(daily_season_df['total_cnts'], labels=daily_season_df['season'], autopct='%1.1f%%', startangle=90)
   ax.set_title('by Season')
   ax.axis('equal')  # Aspek rasio lingkaran
