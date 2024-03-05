@@ -132,9 +132,9 @@ with col2:
   
 # Membuat donut chart dengan Matplotlib
   colorsd = ['#ff9999','#66b3ff','#99ff99','#ffcc99']
-  plt.figure(figsize=(3, 3))
+  plt.figure(figsize=(4, 4))
   plt.pie(daily_weather_df['total_cntw'], labels=daily_weather_df['weathersit'], colors=colorsd, autopct='%1.1f%%', startangle=70)
-  centre_circle = plt.Circle((0,0),0.50,fc='white')
+  centre_circle = plt.Circle((0,0),0.30,fc='white')
   fig = plt.gcf()
   fig.gca().add_artist(centre_circle)
   plt.title('by Weather')
