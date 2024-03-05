@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
+import plotly.express as px
 from babel.numbers import format_currency
 sns.set(style='dark')
 
@@ -129,7 +130,7 @@ with col1:
 
 with col2:
   daily_weather_df = create_byweather_df(main_df)
-  import plotly.express as px
+  
   # Membuat donut chart menggunakan plotly express
   fig = px.pie(daily_weather_df, 
              values='total_cntw', 
