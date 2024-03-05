@@ -121,6 +121,7 @@ with col1:
   # Konfigurasi plot
   fig, ax = plt.subplots()
   ax.pie(daily_season_df['total_cnts'], labels=daily_season_df['season'], autopct='%1.1f%%', startangle=90)
+  ax.set_title('by Season')
   ax.axis('equal')  # Aspek rasio lingkaran
 
   # Menampilkan plot menggunakan Streamlit
@@ -133,7 +134,7 @@ with col2:
 # Membuat donut chart dengan Matplotlib
   colorsd = ['#ff9999','#66b3ff','#99ff99','#ffcc99']
   plt.figure(figsize=(7, 7))
-  plt.pie(daily_weather_df['total_cntw'], labels=daily_weather_df['weathersit'], colors=colorsd, autopct='%1.1f%%', startangle=90)
+  plt.pie(daily_weather_df['total_cntw'], labels=daily_weather_df['weathersit'], colors=colorsd, autopct='%1.1f%%', startangle=70)
   centre_circle = plt.Circle((0,0),0.70,fc='white')
   fig = plt.gcf()
   fig.gca().add_artist(centre_circle)
