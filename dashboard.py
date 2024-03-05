@@ -125,7 +125,6 @@ with col1:
   ax.axis('equal')  # Aspek rasio lingkaran
 
   # Menampilkan plot menggunakan Streamlit
-  st.write("""## <span style='font-size:17px;font-weight:bold;'>by Season</span>""", unsafe_allow_html=True)
   st.pyplot(fig)
 
 with col2:
