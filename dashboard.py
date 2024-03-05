@@ -131,21 +131,18 @@ with col1:
 with col2:
   daily_weather_df = create_byweather_df(main_df)
   
-  # Membuat donut chart menggunakan plotly express
-  fig = px.pie(daily_weather_df, 
-             values='total_cntw', 
-             names='weathersit', 
-             title='by Weather', 
-             hole=0.4,  # Mengatur bagian tengah donut chart
-             height=400,  # Mengatur tinggi donut chart
-             width=600,   # Mengatur lebar donut chart
-             
-             color_discrete_sequence=px.colors.qualitative.Pastel,  # Mengatur warna donut chart
-             hover_data=['weathersit'] 
-            )
-  # Menampilkan donut chart di Streamlit
-  st.plotly_chart(fig)
+# Membuat donut chart dengan Matplotlib
+  colorsd = ['#ff9999','#66b3ff','#99ff99','#ffcc99']
+  plt.figure(figsize=(7, 7))
+  plt.pie(daily_weather_df['total_cntw'], labels=daily_weather_df['weathersit'], colors=colorsd, autopct='%1.1f%%', startangle=90)
+  centre_circle = plt.Circle((0,0),0.70,fc='white')
+  fig = plt.gcf()
+  fig.gca().add_artist(centre_circle)
+  plt.title('by Weather')
+  plt.axis('equal')  
 
+# Menampilkan donut chart di Streamlit
+  st.pyplot(plt)
 # Menampilkan donut chart di samping keterangan
 col1, col2 = st.columns([2,1])
   
